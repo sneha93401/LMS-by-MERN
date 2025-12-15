@@ -29,16 +29,6 @@ function CourseDetails() {
     setCourseData(findCourse);
   };
 
-  // useEffect(() => {
-  //   fetchCoursesData();
-  // }, []);
-
-  // useEffect(() => {
-  //   if (allCourses && allCourses.length > 0) {
-  //     const findCourse = allCourses.find((course) => course._id === id);
-  //     setCourseData(findCourse);
-  //   }
-  // }, [allCourses, id]);
 
   useEffect(()=>{
     fetchCoursesData()
@@ -52,13 +42,13 @@ function CourseDetails() {
     <>
       <div
         className="flex md:flex-row flex-col-reverse gap-10 relative items-start
-     justify-between md:px-36 px-8 md:pt-10 pt-20 text-left"
+  justify-between md:px-36 px-8 md:pt-10 pt-20 text-left bg-gradient-to-br from-slate-900 via-slate-800 to-emerald-900"
       >
-        <div className="absolute top-0 left-0 w-full h-[400px] z-1 bg-gradient-to-b from-cyan-100/70"></div>
+        <div className="absolute top-0 left-0 w-full h-[400px] z-1 bg-gradient-to-b from-slate-900/80"></div>
         {/* left column  */}
 
-        <div className="max-w-xl z-10 text-gray-500">
-          <h1 className="text-2xl sm:text-4xl md:text-4xl lg:text-5xl font-semibold text-gray-800">
+        <div className="max-w-xl z-10 text-gray-300">
+          <h1 className="text-2xl sm:text-4xl md:text-4xl lg:text-5xl font-semibold text-white">
             {courseData.courseTitle}
           </h1>
           <p
@@ -69,8 +59,8 @@ function CourseDetails() {
           ></p>
 
           {/* review and rating  */}
-          <div className="flex items-center space-x-2 pt-3 pb-1 text-sm">
-            <p>{calculateRating(courseData)}</p>
+          <div className="flex items-center space-x-2 pt-3 pb-1 text-sm text-gray-300">
+            <p className="text-emerald-400">{calculateRating(courseData)}</p>
             <div className="flex">
               {[...Array(5)].map((_, i) => (
                 <img
@@ -97,11 +87,11 @@ function CourseDetails() {
           </div>
 
           <p text-sm>
-            Course By <span className="text-blue-600 underline">Sneha</span>
+            Course By <span className="text-emerald-400 underline">Sneha</span>
           </p>
 
           <div className="pt-8 text-gray-800">
-            <h2 className="text-xl font-semibold">Course Structure</h2>
+            <h2 className="text-xl font-semibold text-gray-200">Course Structure</h2>
 
             <div className="pt-5">
               {courseData.courseContent.map((chapter, index) => (
@@ -183,12 +173,12 @@ function CourseDetails() {
               ))}
             </div>
           </div>
-          <div className="py-20 text-sm md:text-default">
-            <h3 className="text-xl font-semibold text-gray-800">
+          <div className="py-8 text-sm md:text-default">
+            <h3 className="text-xl font-semibold text-gray-300">
               Course Description
             </h3>
             <p
-              className="pt-3 rich-text"
+              className="pt-2 text-gray-300"
               dangerouslySetInnerHTML={{
                 __html: courseData.courseDescription,
               }}
@@ -199,7 +189,7 @@ function CourseDetails() {
         {/* right column */}
         <div
           className="max-w-[420px] z-10 shadow-[2px_2px_20px_12px_rgba(0,0,0,0.1)] 
-                    rounded-t-md sm:rounded-none overflow-hidden bg-white 
+                    rounded-t-md sm:rounded-none overflow-hidden
                     min-w-[300px] sm:min-w-[420px]"
         >
           {playerData ? (
@@ -229,24 +219,24 @@ function CourseDetails() {
               </p>
             </div>
             <div className="flex gap-3 items-center pt-2">
-              <p className="text-gray-800 md:text-4xl text-2xl font-semibold">
+              <p className="text-gray-300 md:text-4xl text-2xl font-semibold">
                 {currency}
                 {(
                   courseData.coursePrice -
                   (courseData.discount * courseData.coursePrice) / 100
                 ).toFixed(2)}
               </p>
-              <p className="md:text-lg text-gray-500 line-through">
+              <p className="md:text-lg text-gray-300 line-through">
                 {currency}
                 {courseData.coursePrice}
               </p>
-              <p className="md:text-lg text-gray-500">
+              <p className="md:text-lg text-gray-300">
                 {courseData.discount}% off
               </p>
             </div>
             <div
               className="flex items-center text-sm md:text-default 
-            gap-4 pt-2 md:pt-4 text-gray-500"
+            gap-4 pt-2 md:pt-4 text-gray-300"
             >
               <div className="flex items-center gap-2">
                 <img src={assets.star} alt="star icon" />
@@ -266,16 +256,16 @@ function CourseDetails() {
               </div>
             </div>
 
-            <button className="md:mt-6 mt-4 w-full py-3 rounded bg-blue-600 text-white font-medium cursor-pointer">
+            <button className="md:mt-6 mt-4 w-full py-3 rounded bg-emerald-500 text-white font-medium cursor-pointer hover:bg-emerald-600 transition-colors">
               {isAlreadyEnrolled ? "Already Enrolled" : "Enrolled Now"}
             </button>
           </div>
 
           <div className="pt-6">
-            <p className="md:text-xl pl-2 text-lg font-medium text-gray-800">
+            <p className="md:text-xl pl-2 text-lg font-medium text-gray-300">
               what's in the Course?
             </p>
-            <ul className="ml-4 pt-2 pl-2 text-sm md:text-default list-disc text-gray-500">
+            <ul className="ml-4 pt-2 pl-2 text-sm md:text-default list-disc text-gray-300">
               <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
               <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
               <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>

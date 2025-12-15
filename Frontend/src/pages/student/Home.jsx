@@ -6,6 +6,7 @@ import CoursesSection from '../../components/student/CoursesSection'
 import TestimonialSection from '../../components/student/TestimonialSection'
 import CallToAction from '../../components/student/CallToAction'
 import Footer from '../../components/student/Footer'
+import WhyChooseUs from '../../components/student/WhyChhoseUs'
 
 function Home() {
   return (
@@ -14,6 +15,7 @@ function Home() {
       <Hero/>
       <Companies/>
       <CoursesSection/>
+      <WhyChooseUs/>
       <TestimonialSection/>
       <CallToAction/>
      <Footer/>

@@ -3,7 +3,7 @@ import { AppContext, AppContextProvider } from "../../context/AppContext";
 import SearchBar from "../../components/student/SearchBar";
 import { useParams } from "react-router-dom";
 import CourseCard from "../../components/student/CourseCard";
-import Footer from '../../components/student/Footer'
+import Footer from "../../components/student/Footer";
 import assets from "../../assets/assets";
 
 function CoursesList() {
@@ -26,30 +26,30 @@ function CoursesList() {
   }, [allCourses, input]);
   return (
     <>
-      <div className="relative md:px-36 px-8 pt-20 text-left">
-        <div className="flex md:flex-row flex-col gap-6 items-start justify-between w-full">
+      <div className="bg-slate-900 relative md:px-16 px-8 pt-20 text-left">
+        <div className="flex md:flex-row flex-col gap-7 items-start justify-between w-full pb-5">
           <div>
-            <h1 className="text-4xl font-semibold text-gray-800">
+            <h1 className="text-4xl font-semibold text-gray-300">
               Course List
             </h1>
-            <p className="text-gray-500">
+            <p className="text-gray-300">
               <span
                 className="text-blue-600 cursor-pointer"
                 onClick={() => navigate("/")}
               >
                 Home
               </span>
-              /<span>Course List</span>
+              /<span className="text-gray-300">Course List</span>
             </p>
           </div>
           <SearchBar data={input} />
         </div>
         {input && (
           <div
-            className="inline-flex items-center gap-4 px-4 py-2 
-      border mt-8 mb-8 text-gray-600"
+            className="inline-flex items-center gap-4 px-4 py-8 
+                      border mt-8 mb-8 text-gray-300"
           >
-            <p>{input}</p>
+            <p className="text-gray-300">{input}</p>
             <img
               src={assets.cross_icon}
               alt=""
@@ -61,14 +61,14 @@ function CoursesList() {
 
         <div
           className="grid grid-cols-1 m:grid-cols-2 md:grid-cols-3 lg:grid-cols-4
-        my-16 gap-3 px-2 md:p-0"
+           gap-3 px-2 md:p-0 text-gray-300"
         >
           {filteredCourse.map((course, index) => (
             <CourseCard key={index} course={course} />
           ))}
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </>
   );
 }

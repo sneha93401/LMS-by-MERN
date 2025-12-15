@@ -4,7 +4,7 @@ const TestimonialCard = ({ name, title, rating, text, image }) => {
   const [isExpanded, setIsExpanded] = useState(false);
   
   return (
-    <div className="bg-white rounded-lg border border-gray-200 p-6 shadow-sm hover:shadow-md transition-shadow">
+    <div className="bg-slate-800/60 backdrop-blur-sm rounded-lg border border-slate-700/50 p-6 shadow-sm hover:shadow-md transition-shadow">
       <div className="flex items-center gap-4 mb-4">
         <img 
           src={image} 
@@ -12,8 +12,8 @@ const TestimonialCard = ({ name, title, rating, text, image }) => {
           className="w-16 h-16 rounded-full object-cover"
         />
         <div>
-          <h3 className="text-lg font-semibold text-gray-900">{name}</h3>
-          <p className="text-sm text-gray-600">{title}</p>
+          <h3 className="text-lg font-semibold text-white">{name}</h3>
+          <p className="text-sm text-gray-400">{title}</p>
         </div>
       </div>
       
@@ -30,13 +30,13 @@ const TestimonialCard = ({ name, title, rating, text, image }) => {
         ))}
       </div>
       
-      <p className="text-gray-700 text-sm leading-relaxed mb-4">
+      <p className="text-gray-300 text-sm leading-relaxed mb-4">
         {text}
       </p>
       
       <button 
         onClick={() => setIsExpanded(!isExpanded)}
-        className="text-blue-600 underline cursor-pointer text-sm font-medium hover:text-blue-700 transition-colors"
+        className="text-emerald-400 underline cursor-pointer text-sm font-medium hover:text-emerald-300 transition-colors"
       >
         Read more
       </button>
@@ -70,13 +70,15 @@ const TestimonialSection = () => {
   ];
 
   return (
-    <div className="w-full bg-gray-50 py-16 px-4">
+    <div className="w-full bg-slate-900 py-16 px-4">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">Testimonials</h1>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <h1 className="text-4xl font-bold text-white mb-4">
+            Testimonials
+          </h1>
+          <p className="text-gray-300 max-w-2xl mx-auto">
             Hear from our learners as they share their journeys of transformation, success,
-             and how our platform has made a difference in their lives.
+            and how our platform has made a difference in their lives.
           </p>
         </div>
         

@@ -11,7 +11,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="w-full bg-slate-900 text-white">
+    <footer className="w-full bg-gradient-to-br from-slate-900 via-slate-800 to-emerald-900 text-white">
       <div className="max-w-7xl mx-auto px-6 py-6">
 
         {/* Left-Aligned Grid */}
@@ -20,7 +20,7 @@ const Footer = () => {
           {/* Brand Section */}
           <div className="flex flex-col items-start">
             <div className="flex items-center gap-2 mb-6">
-              <div className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center">
+              <div className="w-10 h-10 bg-emerald-500 hover:bg-emerald-600 rounded-full flex items-center justify-center">
                 <svg
                   className="w-6 h-6 text-white"
                   fill="currentColor"
@@ -29,7 +29,7 @@ const Footer = () => {
                   <path d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
               </div>
-              <span className="text-2xl font-bold">Edemy</span>
+              <span className="text-2xl font-bold">LearnHub</span>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed">
               Lorem Ipsum is simply dummy text of the printing and typesetting industry the printing and typesetting industry.
@@ -66,7 +66,7 @@ const Footer = () => {
               />
               <button
                 onClick={handleSubscribe}
-                className="bg-blue-600 hover:bg-blue-700 font-semibold px-6 py-2.5 rounded-lg"
+                className="bg-emerald-500 hover:bg-emerald-600 font-semibold px-6 py-2.5 rounded-lg"
               >
                 Subscribe
               </button>
