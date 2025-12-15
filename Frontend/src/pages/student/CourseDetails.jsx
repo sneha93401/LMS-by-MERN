@@ -29,10 +29,9 @@ function CourseDetails() {
     setCourseData(findCourse);
   };
 
-
-  useEffect(()=>{
-    fetchCoursesData()
-  },[allCourses])
+  useEffect(() => {
+    fetchCoursesData();
+  }, [allCourses]);
 
   const toogleSection = (index) => {
     setOpenSection((prev) => ({ ...prev, [index]: !prev[index] }));
@@ -91,7 +90,9 @@ function CourseDetails() {
           </p>
 
           <div className="pt-8 text-gray-800">
-            <h2 className="text-xl font-semibold text-gray-200">Course Structure</h2>
+            <h2 className="text-xl font-semibold text-gray-200">
+              Course Structure
+            </h2>
 
             <div className="pt-5">
               {courseData.courseContent.map((chapter, index) => (
